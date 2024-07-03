@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/GitHub/C_Plus_Plus_EEET2482/C_Plus_Plus_EEET2482",
-      "program": "d:/GitHub/C_Plus_Plus_EEET2482/C_Plus_Plus_EEET2482/build/Debug/outDebug",
+      "cwd": "D:/GitHub/C_Plus_Plus_EEET2482/C_Plus_Plus_EEET2482",
+      "program": "D:/GitHub/C_Plus_Plus_EEET2482/C_Plus_Plus_EEET2482/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
