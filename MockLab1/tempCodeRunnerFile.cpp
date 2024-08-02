@@ -1,0 +1,1 @@
+        // ave[stuIndex] = (float)total / 3;

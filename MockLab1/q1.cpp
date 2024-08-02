@@ -30,15 +30,13 @@ int main (int argc, char* argv[]) {
         string input(argv[1]);
         stringstream ss;
 
-        if (input.find(".") > 1){
-            cout << input.find(".");
-
+        if (input.find(".") != string::npos){
             ss << input;
             ss >> FloatNum;
             FloatNum = doubleVal(FloatNum);
             cout << fixed << setprecision(2) << FloatNum << endl;
 
-        } else if (input.find("x") > 0 || input.find("X") > 0){
+        } else if (input.find("x") != string::npos || input.find("X") != string::npos){
             HexNum = doubleVal(input);
             cout << showbase << hex << HexNum << endl;
             cout << "hii";
@@ -46,7 +44,7 @@ int main (int argc, char* argv[]) {
         } else {
             ss << input;
             ss >> intNum;
-            cout << intNum << endl;
+            cout << doubleVal(intNum) << endl;
         }
     }    
 }
