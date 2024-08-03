@@ -50,7 +50,7 @@ main(){
     result = num2 - num1;
     result.showinfo();
 
-    ComplNum result2;
+    ComplNum result2; //obj - double
     result2 = num2 - 3;
     result2.showinfo();
 

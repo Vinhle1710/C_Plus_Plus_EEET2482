@@ -8,6 +8,7 @@ int main (){
     string pwd;
     int a = 0;
     int choice;
+
     while (a==0) {
         cout << "Password management program:\n1. Save your password\n2. Read your password\n3. Cancel\n";
         cout << "Your choice: ";
@@ -46,8 +47,7 @@ int main (){
             default:
             cout << "Input not valid! \n\n";
             break;
-        }
-        return 0;
+        } 
     }
-
+    return 0;
 }

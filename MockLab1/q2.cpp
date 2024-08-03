@@ -27,13 +27,14 @@ class Student {
         }
         void inputData(){
             cout << "Enter student's name: " << endl;
-            cin >> name;
+            getline(cin, name);
             cout << "Enter 1st scores: " << endl;
             cin >> scores[0];
             cout << "Enter 2nd scores: " << endl;
             cin >> scores[1];
             cout << "Enter 3rd scores: " << endl;
             cin >> scores[2];
+            cin.ignore(256,'\n');
         }
 
         bool operator > (Student &stud){
@@ -96,75 +97,75 @@ Student operator + (int n, Student &stud){
 }
 
 int main(){
-    // //a)
-    // Student stuA;
-    // stuA.inputData();
-    // stuA.showInfo();
+    //a)
+    Student stuA;
+    stuA.inputData();
+    stuA.showInfo();
 
-    // //b)
-    // Student stuB;
-    // cin >> stuB;
-    // cout << stuB;
+    //b)
+    Student stuB;
+    cin >> stuB;
+    cout << stuB;
 
-    // if(stuA > stuB){
-    //     cout << "student A's scores are larger" << endl;
-    // } else {cout << "student B's scores are larger" << endl;}
+    if(stuA > stuB){
+        cout << "student A's scores are larger" << endl;
+    } else {cout << "student B's scores are larger" << endl;}
     
-    // Student result;
-    // int incre;
-    // cout << "Increment value: " << endl;
-    // cin >> incre;    
-    // result = incre + stuB;
-    // cout << result;
+    Student result;
+    int incre;
+    cout << "Increment value: " << endl;
+    cin >> incre;    
+    result = incre + stuB;
+    cout << result;
 
 
-    //c)
-    ifstream ifile;
-    string tname, scoresstr;
-    int scores[3], total, stuIndex = 0;
-    float ave[10];
-    stringstream ss;
+    // //c)
+    // ifstream ifile;
+    // string tname, scoresstr;
+    // int scores[3], total, stuIndex = 0;
+    // float ave[10];
+    // stringstream ss;
 
 
-    ifile.open("data.txt");
-    Student stuArr[10];
+    // ifile.open("data.txt");
+    // Student stuArr[10];
 
-    if(!ifile){
-        cout << "File not opened" << endl;
-    }
+    // if(!ifile){
+    //     cout << "File not opened" << endl;
+    // }
 
-    while(stuIndex < 10){
-        ss.clear();
-        total = 0;
+    // while(stuIndex < 10){
+    //     ss.clear();
+    //     total = 0;
         
-        getline(ifile, tname, ',');
-        getline(ifile, scoresstr, '\n');
+    //     getline(ifile, tname, ',');
+    //     getline(ifile, scoresstr, '\n');
 
-        ss << scoresstr;
+    //     ss << scoresstr;
 
-        for (int i = 0; i < 3; i++){
-            ss >> scores[i];
-            total += scores[i];
-        }
+    //     for (int i = 0; i < 3; i++){
+    //         ss >> scores[i];
+    //         total += scores[i];
+    //     }
 
-        ave[stuIndex] = (float)total / 3;
-        stuArr[stuIndex].setName(tname);
-        stuArr[stuIndex].setScores(scores);
+    //     ave[stuIndex] = (float)total / 3;
+    //     stuArr[stuIndex].setName(tname);
+    //     stuArr[stuIndex].setScores(scores);
        
-        cout << stuArr[stuIndex];
-        stuIndex++;
-    }
-    ifile.close();
+    //     cout << stuArr[stuIndex];
+    //     stuIndex++;
+    // }
+    // ifile.close();
 
-    float maxAve = ave[0];
-    for (int i = 1; i < 10; i ++){
-        if (ave[i] > maxAve){
-            maxAve = ave[i];
-            stuIndex = i;
-        }
-    }
-    cout << "The student with the highest average score is: "<< stuArr[stuIndex] << endl;
-    cout << "Their average score is: " << fixed << setprecision(2) << maxAve << endl;
+    // float maxAve = ave[0];
+    // for (int i = 1; i < 10; i ++){
+    //     if (ave[i] > maxAve){
+    //         maxAve = ave[i];
+    //         stuIndex = i;
+    //     }
+    // }
+    // cout << "The student with the highest average score is: "<< stuArr[stuIndex] << endl;
+    // cout << "Their average score is: " << fixed << setprecision(2) << maxAve << endl;
 
     return 0;
 }
