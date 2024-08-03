@@ -55,7 +55,7 @@ class Student {
         }
 
         void setScores(int scores[]){
-            for (int i = 0; i < 3; i++){
+            for (int i = 0; i < 3; i){
                 this->scores[i] = scores[i];
             }
         }
@@ -120,10 +120,11 @@ int main(){
 
     //c)
     fstream myfile;
-    string name = "", scoresstr = ""; 
-    int scores[3], total = 0, stuIndex = 0;
+    string name, scoresstr; 
+    int scores[3], total, stuIndex = 0;
     float ave[10];
     stringstream ss;
+
 
     myfile.open("data.txt");
     Student stuArr[10];
@@ -132,6 +133,7 @@ int main(){
         cout << "File not opened" << endl;
         return -1;
     }
+
 
     while(myfile.peek()!=EOF){
         total = 0;

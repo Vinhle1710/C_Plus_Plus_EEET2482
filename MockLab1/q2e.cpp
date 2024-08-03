@@ -3,6 +3,7 @@
 #include <sstream>
 #include <iomanip>
 #include <string>
+#include <istream>
 
 using namespace std;
 
@@ -99,7 +100,7 @@ Student operator + (int n, Student &stud){
     string sname;
     int i;
     cout << "Please enter a name: ";
-    getline(cin, sname);
+    std::getline(cin, sname);
     if(sname == stud.name){
         temp.name = stud.name;
         for(i=0; i<SIZE; i++)
@@ -110,15 +111,15 @@ Student operator + (int n, Student &stud){
 
 int main()
 {   
-    /*(a)*/
-    Student student1;
-    student1.inputData();
-    student1.showInfo();
+    // /*(a)*/
+    // Student student1;
+    // student1.inputData();
+    // student1.showInfo();
 
-    /*(b)*/
-    //exercise for students
+    // /*(b)*/
+    // //exercise for students
 
-    /*(c)*/
+    // /*(c)*/
     ifstream ifile;
     
     Student studArr[PARTCSIZE];
@@ -127,19 +128,19 @@ int main()
     float average[PARTCSIZE] = {0.0};
     stringstream ss;
 
-    ifile.open("data.txt");
+    ifile.open("data.txt", ios::in);
     if(!ifile){
         cerr << "File could not be opened\n" << endl;
         return -1;
     }
 
-    while(ifile.peek()!=EOF)
+    while(studInd < 10)
     {
         total = 0;
         ss.clear();
-
-        getline(ifile, name, ',');
-        getline(ifile, sdata, '\n');
+;
+        std::getline(ifile, name, ',');
+        std::getline(ifile, sdata, '\n');
         
         ss << sdata;
         
@@ -152,6 +153,7 @@ int main()
         studArr[studInd].setName(name);
         studArr[studInd].setScores(scores);
         average[studInd] = (float)total/SIZE;
+        cout << studArr[studInd];
         studInd++;
     }   
     ifile.close();

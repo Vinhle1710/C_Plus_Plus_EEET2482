@@ -1,1 +1,3 @@
-        // ave[stuIndex] = (float)total / 3;
+    // getline(myfile, test, ',');
+
+    // cout << "try: " << test << endl;
