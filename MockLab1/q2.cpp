@@ -55,7 +55,7 @@ class Student {
         }
 
         void setScores(int scores[]){
-            for (int i = 0; i < 3; i){
+            for (int i = 0; i < 3; i++){
                 this->scores[i] = scores[i];
             }
         }
@@ -132,7 +132,6 @@ int main(){
     if(!ifile){
         cout << "File not opened" << endl;
     }
-    cout<<"helo";
 
     while(stuIndex < 10){
         ss.clear();
@@ -142,20 +141,30 @@ int main(){
         getline(ifile, scoresstr, '\n');
 
         ss << scoresstr;
-        cout << "hi" <<scoresstr << endl;
+
         for (int i = 0; i < 3; i++){
             ss >> scores[i];
             total += scores[i];
         }
 
-        // ave[stuIndex] = (float)total / 3;
+        ave[stuIndex] = (float)total / 3;
         stuArr[stuIndex].setName(tname);
-        // stuArr[stuIndex].setScores(scores);
+        stuArr[stuIndex].setScores(scores);
        
         cout << stuArr[stuIndex];
         stuIndex++;
     }
     ifile.close();
+
+    float maxAve = ave[0];
+    for (int i = 1; i < 10; i ++){
+        if (ave[i] > maxAve){
+            maxAve = ave[i];
+            stuIndex = i;
+        }
+    }
+    cout << "The student with the highest average score is: "<< stuArr[stuIndex] << endl;
+    cout << "Their average score is: " << fixed << setprecision(2) << maxAve << endl;
 
     return 0;
 }
