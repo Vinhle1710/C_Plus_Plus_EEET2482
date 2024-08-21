@@ -3,7 +3,8 @@ using std::cout;
 
 int main() {
     cout << "Hello world!";
-	std::cin >> int x;
+    int x;
+	std::cin >> x;
 	cout << x;
     return 0;
 }
