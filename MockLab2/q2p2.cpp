@@ -41,7 +41,7 @@ class Broker{
 };
 
 int main(){
-    Broker broker1("David", 700);
+    Broker broker1("David", 800);
     Broker broker2("John", 1000);
     Broker broker3("Peter", 1200);
     Broker broker4("Luna", 1800);
